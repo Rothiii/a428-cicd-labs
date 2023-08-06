@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh './jenkins/scripts/test.sh' 
+                sh './jenkins/scripts/test.sh'
+                input message: 'Melanjutkan ke proses Deploy? (Klik "proceed" untuk mengakhiri)'
             }
         }
         stage('Deploy') {
